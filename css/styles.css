@@ -395,3 +395,28 @@ textarea {
     margin-top: 20px;
     font-weight: bold;
 }
+
+.about-txt {
+  padding: 10%;
+  margin: 1%;
+}
+
+.about-txt p {
+  padding: 1%;
+  margin: 1%;
+}
+
+.about-txt h1 {
+  padding: 1%;
+  margin: 1%;
+}
+
+.about-txt h2 {
+  padding: 1%;
+  margin: 1%;
+}
+
+.gmap {
+  padding: 10%;
+  margin: 10%;
+}
