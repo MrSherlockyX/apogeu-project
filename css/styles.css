@@ -108,6 +108,7 @@
     border-radius: 10px;
     height: 50px;
     width: 200px;
+    border: 0px;
     stroke: none;
     box-shadow: none;
     outline: none;
@@ -247,6 +248,39 @@
     justify-content: center;
   }
 
+  .cardbtn {
+    margin-top: 3%;
+    font-size: 17px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    border: 0px;
+    height: 50px;
+    width: auto;
+    stroke: none;
+    box-shadow: none;
+    outline: none;
+    white-space: nowrap;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 5%;
+}
+
+  .cardbtn button:active {
+    border-style: outset;
+  }
+
+  .cardbtn button:focus {
+    outline: none;
+  }
+
+  .cardbtn:hover {
+    background-color: white;
+    color: black;
+  }
+
+
   .foot-bar {
     background-color: black;
     color: white;
@@ -293,3 +327,60 @@
     margin: 0 5px; /* Espaçamento horizontal em cada ícone */
     box-sizing: border-box; /* Inclui padding no tamanho total do ícone */
   }
+
+  body {
+    font-family: Arial, sans-serif;
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+.form-container {
+    background-color: #f2f2f2;
+    padding: 50px;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+.form-container h2 {
+    text-align: center;
+}
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.form-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+.form-button:hover {
+    background-color: #45a049;
+}
+.message {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.bannertitle button:hover {
+  background-color: white;
+  color: black;
+}
+
