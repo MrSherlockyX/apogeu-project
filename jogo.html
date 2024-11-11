@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Apogeu Lounge</title>
+    <meta charset="utf-8"/>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<header class="header">
+
+    <logo-menu class="logo-menu">
+        <img src="./img/apogeulaunge.svg" href="index.html">
+    </logo-menu>
+
+    <navbar class="navbar">
+        <ul class="navlist" style="text-decoration: none;">
+            <li><a href="./index.html">INÍCIO</a></li>
+            <li><a href="">SOBRE</a></li>
+            <li><a href="./pedido.html">PEDIDO</a></li>
+            <li class="navlistsel"><a href="./jogo.html">JOGO DA SORTE</a></li>
+          </ul>
+    </navbar>
+</header>
+<body>
+   
+    <banner class="banner">
+        <img src="./img/banner.png">
+        <bannertitle class="bannertitle">
+            <h2>Jogo da Sorte</h2>
+        </bannertitle>
+    </banner>
+
+    <div class="game-container">
+
+        <p>Escolha seis números de 1 a 100 e clique em "Verificar Sorte" para ver se você ganhou um desconto!</p>
+    
+        <form id="sorteForm">
+            <input type="number" class="number-input" name="numero[]" min="1" max="100" required>
+            <input type="number" class="number-input" name="numero[]" min="1" max="100" required>
+            <input type="number" class="number-input" name="numero[]" min="1" max="100" required>
+            <input type="number" class="number-input" name="numero[]" min="1" max="100" required>
+            <input type="number" class="number-input" name="numero[]" min="1" max="100" required>
+            <input type="number" class="number-input" name="numero[]" min="1" max="100" required>
+            
+            <button type="submit" class="gamesubmit-btn">Verificar Sorte</button>
+            <p class="result-message" id="resultMessage"></p>
+        </form>
+    </div>
+    
+    <script>
+    document.getElementById("sorteForm").addEventListener("submit", function(event) {
+        event.preventDefault(); 
+    
+        var formData = new FormData(this);
+    
+  
+        fetch("verificar_sorte.php", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("resultMessage").textContent = data; 
+            document.getElementById("sorteForm").reset(); 
+        })
+        .catch(error => {
+            document.getElementById("resultMessage").textContent = "Erro ao verificar a sorte.";
+            console.error("Erro:", error);
+        });
+    });
+    </script>
+
+</div>
+</br>
+</br>
+</br>
+
+
+    </content>
+
+</body>
+
+<footer>
+    <div class="foot-bar">
+        <div class="foot-content">
+        <div class="foot-rights">    
+        <p>Website Created By NOX Studios - All Rights Reserved</p>
+        </div>
+        <div class="foot-icons">
+            <div class="insta-logo">
+            <img src="./img/instagram-new.png">
+            </div>
+            <div class="ifood-logo">
+            <img src="./img/ifood-logo-01.png">
+            </div>
+        </div>
+
+        </div>
+    </div>
+</footer>

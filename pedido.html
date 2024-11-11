@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Apogeu Lounge</title>
+    <meta charset="utf-8"/>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<header class="header">
+
+    <logo-menu class="logo-menu">
+        <img src="./img/apogeulaunge.svg" href="index.html">
+    </logo-menu>
+
+    <navbar class="navbar">
+        <ul class="navlist" style="text-decoration: none;">
+            <li><a href="./index.html">INÍCIO</a></li>
+            <li><a href="">SOBRE</a></li>
+            <li><a href="./pedido.html">PEDIDO</a></li>
+            <li class="navlistsel"><a href="./jogo.html">JOGO DA SORTE</a></li>
+          </ul>
+    </navbar>
+</header>
+<body>
+   
+    <banner class="banner">
+        <img src="./img/banner.png">
+        <bannertitle class="bannertitle">
+            <h2>Faça seu pedido</h2>
+        </bannertitle>
+    </banner>
+
+    <div class="game-container">
+
+        <h2>Faça seu pedido</h2>
+        <form id="contactForm">
+
+            <label for="nome">Nome Completo:</label>
+            <input type="text" id="nome" name="nome" required>
+    
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+    
+            <label for="assunto">Endereço:</label>
+            <input type="text" id="assunto" name="assunto" required>
+    
+            <label for="telefone">Telefone de Contato:</label>
+            <input type="tel" id="telefone" name="telefone" required>
+    
+            <label for="pedidos">Pedido:</label>
+            <textarea id="mensagem" name="pedidos" rows="4" required></textarea>
+    
+            <button class="form-button" type="submit" id="responseMessage">Enviar Mensagem</button>
+        </form>
+
+</div>
+</br>
+</br>
+</br>
+
+
+    </content>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+        
+            var formData = new FormData(this);
+        
+            // Enviar dados via AJAX
+            fetch("enviar_pedido.php", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("responseMessage").textContent = data; // Exibe a resposta
+                document.getElementById("contactForm").reset(); // Limpa o formulário
+            })
+            .catch(error => {
+                document.getElementById("responseMessage").textContent = "Erro ao enviar a mensagem.";
+                console.error("Erro:", error);
+            });
+        });
+        </script>
+
+</body>
+
+<footer>
+    <div class="foot-bar">
+        <div class="foot-content">
+        <div class="foot-rights">    
+        <p>Website Created By NOX Studios - All Rights Reserved</p>
+        </div>
+        <div class="foot-icons">
+            <div class="insta-logo">
+            <img src="./img/instagram-new.png">
+            </div>
+            <div class="ifood-logo">
+            <img src="./img/ifood-logo-01.png">
+            </div>
+        </div>
+
+        </div>
+    </div>
+</footer>
